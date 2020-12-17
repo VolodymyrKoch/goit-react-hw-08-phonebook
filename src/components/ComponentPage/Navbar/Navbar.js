@@ -7,9 +7,7 @@ import withAuth from '../hocs/withAuth';
 import AuthNavigation from '../AuthNavbar/AuthNavbar.js';
 import DashboardNavigation from '../DashBordNavBar/DashBordNavBar.js';
 
-
 const Navbar = ({ loginIn }) => {
-
   const authNavigation = !loginIn && <AuthNavigation />;
   const dashboardNavigation = loginIn && <DashboardNavigation />;
 
@@ -17,6 +15,12 @@ const Navbar = ({ loginIn }) => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         <ul className="navbar-nav">
+          <li>
+            <a className="nav navbar-brand" href="/">
+            {/* <img src = {require ('../../ assets / linux_logo.jpg')} /> */}
+              {/* <img src="../../../images/phone-book-icon.png" alt="logo" /> */}
+            </a>
+          </li>
           <li className="nav-item">
             <NavLink
               exact
@@ -34,7 +38,6 @@ const Navbar = ({ loginIn }) => {
         <UserProfile />
       </div>
     </nav>
-
   );
 };
 

@@ -119,13 +119,15 @@ const getContacts = () => dispatch => {
   axios
     .get('/contacts')
     .then(response => {
+      console.log(response);
       dispatch(getContactsSuccess(response.data));
     })
     .catch(error => {
+      console.log(error);
       dispatch(getContactsError(error.message));
-      setTimeout(() => {
-        dispatch(erroMasage());
-      }, 1500);
+      // setTimeout(() => {
+      //   dispatch(erroMasage());
+      // }, 1500);
     });
 };
 

@@ -6,11 +6,11 @@ import classes from '../../App.module.css';
 
 import '../../bases.css';
 import { connect } from 'react-redux';
-import {getContacts} from '../../redux/reducers/contacts/contactsOperations.js';
+import { getContacts } from '../../redux/reducers/contacts/contactsOperations.js';
 
-class App extends Component {
+class ContactsPage extends Component {
   componentDidMount() {
-    this.props.onGetContact();
+    this.props.getContacts();
   }
 
   render() {
@@ -28,8 +28,8 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  onGetContact: getContacts,
-};
+// const mapDispatchToProps = {
+//   onGetContact: getContacts,
+// };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, { getContacts })(ContactsPage);

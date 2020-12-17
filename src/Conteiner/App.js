@@ -6,13 +6,16 @@ import AppRoutes from '../components/ComponentPage/AppRoutes/AppRoutes.js';
 
 import Layout from '../components/ComponentPage/Loyout/Loyout.js';
 import { routes } from '../services/routes.js';
-import { getCurrentUser } from '../redux/reducers/contacts/contactsOperations.js';
+import {
+  getCurrentUser,
+  getContacts,
+} from '../redux/reducers/contacts/contactsOperations.js';
 
 class App extends Component {
   componentDidMount() {
-    const { getCurrentUser } = this.props;
-
+    const { getCurrentUser, getContacts } = this.props;
     getCurrentUser();
+    getContacts();
   }
   render() {
     return (
@@ -26,5 +29,6 @@ class App extends Component {
 }
 const mapDispatchToProps = {
   getCurrentUser,
+  getContacts,
 };
 export default connect(null, mapDispatchToProps)(App);

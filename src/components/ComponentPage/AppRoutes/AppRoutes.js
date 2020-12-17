@@ -17,7 +17,7 @@ const AppRoutes = ({ routes }) => {
   });
 
   return (
-    <div class="conteiner">
+    <div>
       <Suspense fallback={<PageLoader />}>
         <Switch>{items}</Switch>
       </Suspense>
