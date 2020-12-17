@@ -20,11 +20,6 @@ import {
 
 import { combineReducers } from 'redux';
 
-// const initialState = {
-//   items: [],
-//   filter: '',
-//   erroMasage: '',
-// };
 
 const initialState = {
   user: {
@@ -90,4 +85,4 @@ export const contactsReducer = combineReducers({
   token: token,
   error: error,
 });
-// export  { itemsCreateReducer, filterCreateReducer, user, token, error };
+

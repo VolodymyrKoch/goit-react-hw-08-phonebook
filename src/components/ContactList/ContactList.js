@@ -44,7 +44,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return { array: contactSelector.getFilteredItems(state) };
 };
 // ----------------------2-version-filtering- з диструктуризацією------------

@@ -1,16 +1,12 @@
-import React from "react";
-// import { Container, CssBaseline } from "@material-ui/core";
+import React from 'react';
 
-import Navbar from "../Navbar/Navbar.js";
+import Navbar from '../Navbar/Navbar.js';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {/* <CssBaseline /> */}
-      {/* <Container component="section" maxWidth="xl"> */}
-        {children}
-      {/* </Container> */}
+      {children}
     </>
   );
 };

@@ -85,10 +85,8 @@ class ContactForm extends Component {
         </div>
         <CSSTransition
           in={this.state.erroMasage}
-          // in={false}
           timeout={250}
           appear={true}
-          // classNames="errorAnimation"
           classNames={{ ...classesEror }}
           unmountOnExit
         >
@@ -102,7 +100,6 @@ class ContactForm extends Component {
 const mapStateToProps = (state, props) => ({
   contacts: contactSelector.getContact(state),
 });
-// const mapStateToProps = (state, props) => console.log(state);
 
 const mapDispatchToProps = {
   addContact: addContact,

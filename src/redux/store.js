@@ -1,19 +1,4 @@
-// import { contactsReducer } from './reducers/contacts/contactsReducer.js';
-// import { configureStore } from '@reduxjs/toolkit';
-
-// const store = configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//   },
-// });
-// console.log(store);
-
-// export default store;
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-// import { createReducer } from '@reduxjs/toolkit';
-// import { contactsReducer } from '../redux/reducers/reducer.js';
-// import { contactsReducer } from './reducers/contacts/contactsReducer.js';
 import { contactsReducer } from './reducers/contacts/contactsReducer.js';
 import {
   persistStore,

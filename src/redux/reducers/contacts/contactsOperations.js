@@ -100,8 +100,7 @@ const getCurrentUser = () => (dispatch, getState) => {
     });
 };
 
-// axios.defaults.baseURL = 'http://localhost:2000';
-
+// -------------------------------------------
 const addContact = contac => dispatch => {
   dispatch(addContactRequest());
   axios

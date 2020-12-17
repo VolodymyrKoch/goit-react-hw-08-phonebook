@@ -10,8 +10,7 @@ const withAuth = Wrapped => {
     loginIn: Boolean(state.auth.token),
   });
 
-  // не обязателен хок withRouter
-  return withRouter(connect(mapStateToProps)(WithAuth));
+    return withRouter(connect(mapStateToProps)(WithAuth));
 };
 
 export default withAuth;

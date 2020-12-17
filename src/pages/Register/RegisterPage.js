@@ -1,15 +1,3 @@
-// import React from "react";
-
-// const RegisterPage = () => {
-//   return (
-//     <div>
-//       <h1>Register Page</h1>
-//     </div>
-//   );
-// };
-
-// export default RegisterPage;
-
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import { connect } from 'react-redux';
