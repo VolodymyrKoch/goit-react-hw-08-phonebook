@@ -96,7 +96,7 @@ const getCurrentUser = () => (dispatch, getState) => {
       dispatch(getCurrentUserSuccess(data));
     })
     .catch(error => {
-      dispatch(getCurrentUserSuccess(error));
+      dispatch(getCurrentUserError(error));
     });
 };
 
@@ -154,3 +154,4 @@ export {
   getCurrentUser,
   logout,
 };
+// getCurrentUser

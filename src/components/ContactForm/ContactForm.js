@@ -3,7 +3,7 @@ import classes from './ContactForm.module.css';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import '../../components/anime.css';
-import contactsOperations from '../../redux/reducers/contacts/contactsOperations.js';
+import { addContact } from '../../redux/reducers/contacts/contactsOperations.js';
 import classesEror from '../ErrorMassage/ErrorMassage.module.css';
 import ErrorMassage from '../ErrorMassage/ErrorMassage.js';
 import contactSelector from '../../redux/reducers/contacts/contactsSelectors.js';
@@ -102,9 +102,10 @@ class ContactForm extends Component {
 const mapStateToProps = (state, props) => ({
   contacts: contactSelector.getContact(state),
 });
+// const mapStateToProps = (state, props) => console.log(state);
 
 const mapDispatchToProps = {
-  addContact: contactsOperations.addContact,
+  addContact: addContact,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

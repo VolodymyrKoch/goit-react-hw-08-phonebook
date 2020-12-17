@@ -11,7 +11,6 @@ const routesPath = {
   REGISTER: '/register',
   LOGIN: '/login',
   CONTACTS: '/contacts',
-  // NOTFOUND: "/notFound",
 };
 
 const routes = [
@@ -40,11 +39,10 @@ const routes = [
     path: routesPath.CONTACTS,
     exact: true,
     component: ContactsPage,
-    private: false,
+    private: true,
     restricted: false,
   },
   {
-    // path: routesPath.NOTFOUND,
     exact: true,
     component: NotFoundPage,
     private: false,

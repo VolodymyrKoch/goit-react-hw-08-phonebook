@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { routesPath } from '../../../services/routes.js';
 import UserProfile from '../UserProfile/UserProfile';
 import withAuth from '../hocs/withAuth';
-// import AuthNavigation from "../AuthNavigation/AuthNavigation";
-// import DashboardNavigation from "../DashboardNavigation/DashboardNavigation";
+import AuthNavigation from '../AuthNavbar/AuthNavbar.js';
+import DashboardNavigation from '../DashBordNavBar/DashBordNavBar.js';
 
 // import { makeStyles } from "@material-ui/core/styles";
 // import AppBar from "@material-ui/core/AppBar";
@@ -43,8 +43,8 @@ import withAuth from '../hocs/withAuth';
 const Navbar = ({ loginIn }) => {
   // const classes = useStyles();
 
-  // const authNavigation = !loginIn && <AuthNavigation />;
-  // const dashboardNavigation = loginIn && <DashboardNavigation />;
+  const authNavigation = !loginIn && <AuthNavigation />;
+  const dashboardNavigation = loginIn && <DashboardNavigation />;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -60,38 +60,9 @@ const Navbar = ({ loginIn }) => {
               Home
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to={routesPath.REGISTER}
-              className="nav-link"
-              activeClassName="active"
-            >
-              Register
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to={routesPath.LOGIN}
-              className="nav-link"
-              activeClassName="active"
-            >
-              Login
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              exact
-              to={routesPath.CONTACTS}
-              className="nav-link"
-              activeClassName="active"
-            >
-              Contacts
-            </NavLink>
-          </li>
-          {/* {authNavigation} */}
-          {/* {dashboardNavigation} */}
+
+          {authNavigation}
+          {dashboardNavigation}
         </ul>
         <UserProfile />
       </div>

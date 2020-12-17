@@ -4,7 +4,7 @@ import './ContactList.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import '../../components/anime.css';
-import contactsOperations from '../../redux/reducers/contacts/contactsOperations.js';
+import { removeContact } from '../../redux/reducers/contacts/contactsOperations.js';
 import contactSelector from '../../redux/reducers/contacts/contactsSelectors.js';
 
 const ContactList = function ({ array, deleteItem }) {
@@ -40,11 +40,11 @@ ContactList.propTypes = {
 // ---------------------1-version-filtering-----
 
 const mapDispatchToProps = {
-  deleteItem: contactsOperations.removeContact,
+  deleteItem: removeContact,
 };
 
 const mapStateToProps = state => {
-  console.log(state.contacts);
+  console.log(state);
   return { array: contactSelector.getFilteredItems(state) };
 };
 // ----------------------2-version-filtering- з диструктуризацією------------
