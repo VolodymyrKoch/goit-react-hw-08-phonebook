@@ -80,7 +80,12 @@ class ContactForm extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <button type="submit">Add contacts</button>
+            <button
+              className="btn btn-primary btn-sm btn-block mt-2"
+              type="submit"
+            >
+              Add contacts
+            </button>
           </form>
         </div>
         <CSSTransition

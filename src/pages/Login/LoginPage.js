@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as Yup from 'yup';
 
 import { login } from '../../redux/reducers/contacts/contactsOperations.js';
+import contactSelector from '../../redux/reducers/contacts/contactsSelectors.js';
 
 const signInSchema = Yup.object().shape({
   email: Yup.string()
@@ -14,10 +15,15 @@ const signInSchema = Yup.object().shape({
     .required('Field is required!'),
 });
 
-const LoginPage = ({ login }) => {
+const LoginPage = ({ login, LoginError }) => {
   return (
     <div className="row">
       <div className="col-6 offset-3 mt-5">
+        {LoginError && (
+          <th className="text-danger invalid-feedback d-block">
+            Incorrectly entered @email or password. Please try again.
+          </th>
+        )}
         <Formik
           initialValues={{ email: '', password: '' }}
           validationSchema={signInSchema}
@@ -35,6 +41,7 @@ const LoginPage = ({ login }) => {
                   errors.email && touched.email ? 'is-invalid' : ''
                 }`}
               />
+
               <ErrorMessage
                 name="email"
                 component="small"
@@ -71,5 +78,7 @@ const LoginPage = ({ login }) => {
     </div>
   );
 };
-
-export default connect(null, { login })(LoginPage);
+const mapStateToProps = state => ({
+  LoginError: contactSelector.getError(state),
+});
+export default connect(mapStateToProps, { login })(LoginPage);

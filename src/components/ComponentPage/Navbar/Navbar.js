@@ -6,6 +6,7 @@ import UserProfile from '../UserProfile/UserProfile';
 import withAuth from '../hocs/withAuth';
 import AuthNavigation from '../AuthNavbar/AuthNavbar.js';
 import DashboardNavigation from '../DashBordNavBar/DashBordNavBar.js';
+import logoImg from '../../../images/phone-book-icon.png';
 
 const Navbar = ({ loginIn }) => {
   const authNavigation = !loginIn && <AuthNavigation />;
@@ -17,8 +18,7 @@ const Navbar = ({ loginIn }) => {
         <ul className="navbar-nav">
           <li>
             <a className="nav navbar-brand" href="/">
-            {/* <img src = {require ('../../ assets / linux_logo.jpg')} /> */}
-              {/* <img src="../../../images/phone-book-icon.png" alt="logo" /> */}
+              <img src={logoImg} alt="logo" width="30px" />
             </a>
           </li>
           <li className="nav-item">

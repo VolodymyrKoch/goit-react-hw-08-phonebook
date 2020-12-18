@@ -106,7 +106,6 @@ const addContact = contac => dispatch => {
   axios
     .post('/contacts', { ...contac })
     .then(response => {
-      console.log(response);
       dispatch(addContactSuccess(response.data));
     })
     .catch(error => {
@@ -119,7 +118,6 @@ const getContacts = () => dispatch => {
   axios
     .get('/contacts')
     .then(response => {
-      console.log(response);
       dispatch(getContactsSuccess(response.data));
     })
     .catch(error => {
@@ -155,4 +153,3 @@ export {
   getCurrentUser,
   logout,
 };
-// getCurrentUser

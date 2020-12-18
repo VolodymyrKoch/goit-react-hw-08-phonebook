@@ -8,7 +8,6 @@ import PublicRoute from '../PrivateRoute/PublicRoute';
 
 const AppRoutes = ({ routes }) => {
   const items = routes.map((route, idx) => {
-    // console.log(route);
     return route.private ? (
       <PrivateRoute key={idx} {...route} />
     ) : (

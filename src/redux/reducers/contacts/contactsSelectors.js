@@ -6,6 +6,8 @@ const getFilter = state => state.auth.filter;
 
 const getVisibleFilter = state => state.auth.items.length > 1;
 
+const getError = state => state.auth.error;
+
 const getFilteredItems = createSelector(
   [getContact, getFilter],
   (auth, filter) => {
@@ -21,4 +23,5 @@ export default {
   getFilteredItems,
   getVisibleFilter,
   getFilter,
+  getError,
 };

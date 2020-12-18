@@ -28,8 +28,4 @@ class ContactsPage extends Component {
   }
 }
 
-// const mapDispatchToProps = {
-//   onGetContact: getContacts,
-// };
-
 export default connect(null, { getContacts })(ContactsPage);
